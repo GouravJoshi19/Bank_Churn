@@ -1,4 +1,4 @@
-scikit-learn
+scikit-learn version 1.2.2
 numpy
 pandas
 seaborn
