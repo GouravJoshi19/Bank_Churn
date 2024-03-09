@@ -30,9 +30,9 @@ st.write(data.describe())
 
 # Age distribution
 st.write("## Age Distribution")
-sns.histplot(data=data, x='Age', bins=30, kde=True)
+histogram=sns.histplot(data=data, x='Age', bins=30, kde=True)
 plt.title("Age distribution in the Dataset")
-st.placeholder1=st.empty()
+st.pyplot(histogram)
 
 
 #age-churn
@@ -40,13 +40,13 @@ churned = data[data['Exited'] == 1]['Age']
 not_churned = data[data['Exited'] == 0]['Age']
 
 # Create histogram
-plt.hist([churned, not_churned], bins=20, color=['red', 'blue'], label=['Churned', 'Not Churned'])
+histogram_2=plt.hist([churned, not_churned], bins=20, color=['red', 'blue'], label=['Churned', 'Not Churned'])
 plt.xlabel('Age')
 plt.ylabel('Count')
 plt.title('Distribution of Ages for Churned and Non-Churned Customers')
 plt.legend()
 plt.show()
-st.placeholder2=st.empty()
+st.pyplot(histogram_2)
 
 # Filter by gender
 gender = st.selectbox("Select Gender", options=["All"] + data['Gender'].unique().tolist())
@@ -54,24 +54,24 @@ if gender != "All":
     filtered_data = data[data['Gender'] == gender]
     st.write("## Summary Statistics for", gender, "Customers")
     st.write(filtered_data.describe())
-st.placeholder3=st.empty()
+
 
 #Gender Distribution
 st.write("## Gender Distribution")
 fig=sns.countplot(data=data,x='Gender')
 plt.title("Age distribution in the Dataset")
-st.placeholder4=st.empty()
+st.pyplot(fig)
 
 #Proportion-gender
 churned_gender=data[data['Exited']==1]["Gender"]
 not_churned_gender=data[data['Exited']==0]["Gender"]
-plt.hist([churned_gender,not_churned_gender],color=['green','yellow'],label=['Churned','Not-Churned'])
+histogram_3=plt.hist([churned_gender,not_churned_gender],color=['green','yellow'],label=['Churned','Not-Churned'])
 plt.xlabel('Gender')
 plt.ylabel('Count')
 plt.title('Distribution of Genders for Churned and Non-Churned Customers')
 plt.legend()
 plt.show()
-st.pyplot()
+st.pyplot(histogram_3)
 
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
