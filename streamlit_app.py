@@ -40,7 +40,7 @@ churned = data[data['Exited'] == 1]['Age']
 not_churned = data[data['Exited'] == 0]['Age']
 
 # Create histogram
-histogram_2=plt.hist([churned, not_churned], bins=20, color=['red', 'blue'], label=['Churned', 'Not Churned'])
+plt.hist([churned, not_churned], bins=20, color=['red', 'blue'], label=['Churned', 'Not Churned'])
 plt.xlabel('Age')
 plt.ylabel('Count')
 plt.title('Distribution of Ages for Churned and Non-Churned Customers')
@@ -59,7 +59,7 @@ if gender != "All":
 #Gender Distribution
 st.write("## Gender Distribution")
 fig=sns.countplot(data=data,x='Gender')
-plt.title("Age distribution in the Dataset")
+plt.title("Gender distribution in the Dataset")
 st.pyplot()
 
 #Proportion-gender
