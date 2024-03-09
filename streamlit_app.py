@@ -34,6 +34,7 @@ histogram=sns.histplot(data=data, x='Age', bins=30, kde=True)
 plt.title("Age distribution in the Dataset")
 plt.legend()
 plt.show()
+st.pyplot()
 
 
 #age-churn
@@ -63,6 +64,7 @@ fig=sns.countplot(data=data,x='Gender')
 plt.title("Gender distribution in the Dataset")
 plt.legend()
 plt.show()
+st.pyplot()
 
 #Proportion-gender
 churned_gender=data[data['Exited']==1]["Gender"]
