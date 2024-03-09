@@ -32,6 +32,8 @@ st.write(data.describe())
 st.write("## Age Distribution")
 histogram=sns.histplot(data=data, x='Age', bins=30, kde=True)
 plt.title("Age distribution in the Dataset")
+plt.legend()
+plt.show()
 st.pyplot()
 
 
@@ -60,6 +62,8 @@ if gender != "All":
 st.write("## Gender Distribution")
 fig=sns.countplot(data=data,x='Gender')
 plt.title("Gender distribution in the Dataset")
+plt.legend()
+plt.show()
 st.pyplot()
 
 #Proportion-gender
